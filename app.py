@@ -66,6 +66,12 @@ st.markdown("""
         text-align: center;
         font-size: 1.2rem;
     }
+    .formula-box .stLatex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -86,7 +92,8 @@ page = st.sidebar.radio(
         "📖 Code Components",
         "⬇️ Download",
         "💭 Final Thoughts",
-        "📖 Development Story"
+        "📖 Development Story",
+        "🤖 AI Agents in Development"
     ]
 )
 
@@ -185,4 +192,7 @@ elif page == "💭 Final Thoughts":
 
 elif page == "📖 Development Story":
     exec(open(os.path.join(BASE_DIR, "pages/09_development_story.py")).read())
+
+elif page == "🤖 AI Agents in Development":
+    exec(open(os.path.join(BASE_DIR, "pages/10_ai_agents.py")).read())
 

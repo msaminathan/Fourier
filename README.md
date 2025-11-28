@@ -52,7 +52,8 @@ Fourier/
 │   ├── 06_code_components.py       # Code Documentation
 │   ├── 07_download.py              # Download Page
 │   ├── 08_final_thoughts.py       # Final Thoughts
-│   └── 09_development_story.py    # Development Story
+│   ├── 09_development_story.py    # Development Story
+│   └── 10_ai_agents.py           # AI Agents in Development
 ├── requirements.txt                # Python dependencies
 └── README.md                       # This file
 ```
@@ -69,6 +70,7 @@ Fourier/
 8. **Download**: Installation and deployment guide
 9. **Final Thoughts**: Summary and continued learning
 10. **Development Story**: Original requirements and development process
+11. **AI Agents in Development**: How AI agents were used to build this app
 
 ## 💻 Usage
 
