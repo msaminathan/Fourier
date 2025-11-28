@@ -23,7 +23,11 @@ The Fourier Transform of a continuous function $f(t)$ is defined as:
 
 st.markdown("""
 <div class='formula-box'>
-    <h3>$$F(\\omega) = \\int_{-\\infty}^{\\infty} f(t) e^{-i\\omega t} dt$$</h3>
+""", unsafe_allow_html=True)
+
+st.latex(r"F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt")
+
+st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
@@ -35,7 +39,11 @@ The inverse Fourier Transform reconstructs the original function:
 
 st.markdown("""
 <div class='formula-box'>
-    <h3>$$f(t) = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} F(\\omega) e^{i\\omega t} d\\omega$$</h3>
+""", unsafe_allow_html=True)
+
+st.latex(r"f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{i\omega t} d\omega")
+
+st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
@@ -43,7 +51,7 @@ st.markdown("""
 **Where:**
 - $f(t)$ is the function in the **time domain**
 - $F(\\omega)$ is the function in the **frequency domain**
-- $\\omega$ is the angular frequency (radians per second)
+- $\\omega$ (omega) is the angular frequency (radians per second)
 - $i$ is the imaginary unit ($i^2 = -1$)
 - $e^{-i\\omega t}$ is Euler's formula: $e^{-i\\omega t} = \\cos(\\omega t) - i\\sin(\\omega t)$
 """)
@@ -56,7 +64,11 @@ For digital signals, we use the Discrete Fourier Transform. Given $N$ samples, t
 
 st.markdown("""
 <div class='formula-box'>
-    <h3>$$X[k] = \\sum_{n=0}^{N-1} x[n] e^{-i 2\\pi k n / N}$$</h3>
+""", unsafe_allow_html=True)
+
+st.latex(r"X[k] = \sum_{n=0}^{N-1} x[n] e^{-i 2\pi k n / N}")
+
+st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
@@ -73,28 +85,24 @@ st.header("3️⃣ Key Mathematical Properties")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("""
-    ### Linearity
-    $$\\mathcal{F}\\{af(t) + bg(t)\\} = aF(\\omega) + bG(\\omega)$$
+    st.markdown("### Linearity")
+    st.latex(r"\mathcal{F}\{af(t) + bg(t)\} = aF(\omega) + bG(\omega)")
     
-    ### Time Shifting
-    $$\\mathcal{F}\\{f(t - t_0)\\} = e^{-i\\omega t_0} F(\\omega)$$
+    st.markdown("### Time Shifting")
+    st.latex(r"\mathcal{F}\{f(t - t_0)\} = e^{-i\omega t_0} F(\omega)")
     
-    ### Frequency Shifting
-    $$\\mathcal{F}\\{e^{i\\omega_0 t} f(t)\\} = F(\\omega - \\omega_0)$$
-    """)
+    st.markdown("### Frequency Shifting")
+    st.latex(r"\mathcal{F}\{e^{i\omega_0 t} f(t)\} = F(\omega - \omega_0)")
 
 with col2:
-    st.markdown("""
-    ### Scaling
-    $$\\mathcal{F}\\{f(at)\\} = \\frac{1}{|a|} F\\left(\\frac{\\omega}{a}\\right)$$
+    st.markdown("### Scaling")
+    st.latex(r"\mathcal{F}\{f(at)\} = \frac{1}{|a|} F\left(\frac{\omega}{a}\right)")
     
-    ### Convolution
-    $$\\mathcal{F}\\{f(t) * g(t)\\} = F(\\omega) \\cdot G(\\omega)$$
+    st.markdown("### Convolution")
+    st.latex(r"\mathcal{F}\{f(t) * g(t)\} = F(\omega) \cdot G(\omega)")
     
-    ### Parseval's Theorem
-    $$\\int_{-\\infty}^{\\infty} |f(t)|^2 dt = \\frac{1}{2\\pi} \\int_{-\\infty}^{\\infty} |F(\\omega)|^2 d\\omega$$
-    """)
+    st.markdown("### Parseval's Theorem")
+    st.latex(r"\int_{-\infty}^{\infty} |f(t)|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |F(\omega)|^2 d\omega")
 
 st.header("4️⃣ Euler's Formula & Complex Exponentials")
 
@@ -104,7 +112,11 @@ The foundation of Fourier Transform lies in Euler's beautiful formula:
 
 st.markdown("""
 <div class='formula-box'>
-    <h3>$$e^{i\\theta} = \\cos(\\theta) + i\\sin(\\theta)$$</h3>
+""", unsafe_allow_html=True)
+
+st.latex(r"e^{i\theta} = \cos(\theta) + i\sin(\theta)")
+
+st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
@@ -123,7 +135,7 @@ ax.plot([0, np.pi/4], [0, 1], 'r-', linewidth=2, label='Complex Exponential')
 ax.plot([0], [0], 'ro', markersize=10)
 ax.plot([np.pi/4], [1], 'go', markersize=10)
 
-ax.set_title("Euler's Formula: $e^{i\\theta}$ on Complex Plane", 
+ax.set_title("Euler's Formula: $e^{i\\theta}$ (e^(iθ)) on Complex Plane", 
              fontsize=14, fontweight='bold', pad=20)
 ax.legend()
 ax.grid(True)
@@ -137,7 +149,7 @@ The Fourier Transform decomposes signals into:
 - **Magnitude**: How much of each frequency is present
 - **Phase**: The timing relationship between frequencies
 
-For a complex-valued $F(\\omega)$:
+For a complex-valued $F(\\omega)$ (F(ω)):
 - **Magnitude**: $|F(\\omega)| = \\sqrt{\\text{Re}(F)^2 + \\text{Im}(F)^2}$
 - **Phase**: $\\angle F(\\omega) = \\arctan\\left(\\frac{\\text{Im}(F)}{\\text{Re}(F)}\\right)$
 """)
@@ -148,12 +160,12 @@ st.markdown("""
 | Time Domain | Frequency Domain |
 |------------|------------------|
 | $\\delta(t)$ (impulse) | $1$ (constant) |
-| $1$ (constant) | $2\\pi\\delta(\\omega)$ |
-| $e^{i\\omega_0 t}$ | $2\\pi\\delta(\\omega - \\omega_0)$ |
-| $\\cos(\\omega_0 t)$ | $\\pi[\\delta(\\omega - \\omega_0) + \\delta(\\omega + \\omega_0)]$ |
-| $\\sin(\\omega_0 t)$ | $i\\pi[\\delta(\\omega + \\omega_0) - \\delta(\\omega - \\omega_0)]$ |
-| $e^{-at}u(t)$ (exponential) | $\\frac{1}{a + i\\omega}$ |
-| $\\text{rect}(t)$ (rectangle) | $\\text{sinc}(\\omega)$ |
+| $1$ (constant) | $2\\pi\\delta(\\omega)$ (2πδ(ω)) |
+| $e^{i\\omega_0 t}$ (e^(iω₀t)) | $2\\pi\\delta(\\omega - \\omega_0)$ (2πδ(ω-ω₀)) |
+| $\\cos(\\omega_0 t)$ (cos(ω₀t)) | $\\pi[\\delta(\\omega - \\omega_0) + \\delta(\\omega + \\omega_0)]$ |
+| $\\sin(\\omega_0 t)$ (sin(ω₀t)) | $i\\pi[\\delta(\\omega + \\omega_0) - \\delta(\\omega - \\omega_0)]$ |
+| $e^{-at}u(t)$ (exponential) | $\\frac{1}{a + i\\omega}$ (1/(a+iω)) |
+| $\\text{rect}(t)$ (rectangle) | $\\text{sinc}(\\omega)$ (sinc(ω)) |
 """)
 
 st.header("7️⃣ Interactive Mathematical Visualization")
