@@ -72,6 +72,10 @@ st.markdown("""
         align-items: center;
         font-size: 1.3rem;
     }
+    /* Hide Streamlit's automatic page navigation */
+    [data-testid="stSidebarNav"] {
+        display: none !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -94,7 +98,8 @@ page = st.sidebar.radio(
         "💭 Final Thoughts",
         "📖 Development Story",
         "🤖 AI Agents in Development"
-    ]
+    ],
+    label_visibility="collapsed"
 )
 
 # Route to pages
